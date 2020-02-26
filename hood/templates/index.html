@@ -5,7 +5,6 @@
 <header class="jumbotron  default-color text-center">
     <H1 class="welcome">My neighborhood.</H1>
     <h3 class="sub"></h3>
-    <a href="" class="btn btn-primary text-center">Join neighborhood</a>
 </header>
 
 
@@ -16,9 +15,9 @@
             <div class="card" style="width: 18rem; margin-top: 10px">
                 <img src="{{ post.image.url }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <a href="" class="btn btn-warning">View</a>
+                    <h5 class="card-title">{{post.name}}</h5>
+                    <p class="card-text">{{post.location}}</p>
+                    <a href="" class="btn default-color">Join</a>
                 </div>
             </div>
         </div>
