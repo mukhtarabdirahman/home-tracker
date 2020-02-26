@@ -28,3 +28,13 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete()
+
+class Neighbourhood(models.Model):
+    image = models.ImageField()
+    name = models.CharField(max_length=30)
+    location = models.CharField(max_length = 60)
+
+    def save_neighbourhood(self):
+        self.save()
+    def delete_neighbourhood(self):
+        self.delete()
