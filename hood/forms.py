@@ -14,4 +14,3 @@ class PostPictureForm(forms.ModelForm):
     class Meta:
         model = Neighbourhood
         fields = ['location', 'name','image']
-

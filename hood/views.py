@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .models import Profile,Neighbourhood
-from .forms import UserRegisterForm, PostPictureForm
+from .forms import UserRegisterForm, PostPictureForm 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def home(request):
