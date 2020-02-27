@@ -34,6 +34,10 @@ class Neighbourhood(models.Model):
     name = models.CharField(max_length=30)
     location = models.CharField(max_length = 60)
 
+    @classmethod
+    def search_by_location(cls,search_term):
+        location = cls.objects.filter(location__icontains=search_term)
+        return location
     def save_neighbourhood(self):
         self.save()
     def delete_neighbourhood(self):

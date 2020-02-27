@@ -1,8 +1,46 @@
-<!--Navbar-->
-<nav class="navbar navbar-dark default-color">
-    <form class="form-inline my-2 my-lg-0 ml-auto">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+<nav class="mb-1 navbar navbar-expand-lg navbar default-color lighten-1">
+  <a class="navbar-brand" href="{% url 'home'%}">Hood</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <div class="col-sm-6 col-md-6">
+          {% if user.is_authenticated %}
+          <ul>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-warningt" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span>
+                    </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                  <a href="/accounts/password/change">Change Password</a>
+                </li>
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          {% else %}
+          <li>
+            <a class='btn btn-default' href="/accounts/login">Login</a>
+          </li>
+
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-1 " action="{% url 'search_results'%}">
+      <div class="md-form form-sm my-0">
+        <input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search"
+          aria-label="Search" name="location">
+      </div>
+      <button class="btn btn-outline-white btn-sm my-0" type="submit">Search</button>
     </form>
-  </nav>
-  <!--/.Navbar-->
+</nav>
+<!--/.Navbar -->

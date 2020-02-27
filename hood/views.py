@@ -21,3 +21,14 @@ def image_form(request):
     else: 
         form = PostPictureForm() 
     return render(request, 'image_form.html', {'form' : form}) 
+
+@login_required(login_url='/accounts/login/')
+def search_results(request):
+    if 'location' in request.GET and request.GET["location"]:
+        search_term = request.GET.get("location")
+        searched_location = Neighbourhood.search_by_location(search_term)
+        message = f"{search_term}"
+        return render(request, 'search.html',{"message":message,"location": searched_location})
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
