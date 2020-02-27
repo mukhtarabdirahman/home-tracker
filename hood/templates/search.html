@@ -15,11 +15,14 @@
 
   {% if location %}
     {% for locations in location %}
-      <div class="card" style="width: 18rem; margin-top: 10px">
-        <div class="card-body">
-            <h5 class="card-title">{{locations.location}}</h5>
-            <p class="card-text">{{locations.name}}</p>
-            
+        <div class="col-md-4 ">
+            <div class="card" style="width: 18rem; margin-top: 10px">
+                <img src="{{ locations.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{locations.name}}</h5>
+                    <p class="card-text">{{locations.location}}</p>
+                </div>
+            </div>
         </div>
     {% endfor %}
   {% endif %}
