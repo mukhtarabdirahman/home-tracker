@@ -9,6 +9,7 @@ verify_ssl = true
 gunicorn = "==19.9.0"
 django = "==1.11"
 whitenoise = "*"
+django-bootstrap3 = "*"
 
 [requires]
 python_version = "3.7"
